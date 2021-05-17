@@ -37,6 +37,9 @@
 <!--                    </div>-->
 <!--                </div>-->
 <!--            </div>-->
+            <div class="form-group" style="display: none">
+                <input name="timestamp" text="" id="times">
+            </div>
             <div class="form-group" id="YZM" style="display: none">
                 <label class="col-sm-3 control-label">验证码：</label>
                 <div class="col-sm-8">
@@ -52,12 +55,15 @@
     <th:block th:include="include :: datetimepicker-js" />
     <script th:inline="javascript">
         function change_captcha(){
-            document.getElementById("captcha_img").src = "http://c2020502194rsy.scd.wezhan.cn/Common/GenerateCommentCaptcha?timestamp=0.3333336222553"+new Date();
+            var timestamp = Math.random();
+            document.getElementById("times").value=timestamp;
+            document.getElementById("captcha_img").src = "http://c2020502194rsy.scd.wezhan.cn/Common/GenerateCommentCaptcha?timestamp="+timestamp;
         }
 
         $("#XL").change(function(){
             if($(this).val()==1){
                 $("#YZM").show();
+                change_captcha();
             }else{
                 $("#YZM").hide();
             }

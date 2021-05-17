@@ -113,9 +113,10 @@ public class CommentController extends BaseController
     @Log(title = "Comment_check", businessType = BusinessType.UPDATE)
     @PostMapping("/edit")
     @ResponseBody
-    public AjaxResult editSave(Comment comment,String captcha)
+    public AjaxResult editSave(Comment comment,String captcha,String timestamp)
     {
-        String timestamp = "0.3333336222553";
+//        System.out.println("随机数为："+timestamp);
+//        String timestamp = "0.3333336222553";
         Comment comment1 = commentService.selectCommentById(comment.getId());
 //        这里进行验证码的初始审核
         if(comment1.getState() == comment.getState())
