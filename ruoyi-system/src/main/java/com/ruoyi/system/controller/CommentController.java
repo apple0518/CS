@@ -1,8 +1,6 @@
 package com.ruoyi.system.controller;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.Date;
 import java.util.List;
 
@@ -11,6 +9,7 @@ import com.ruoyi.common.json.JSONObject;
 import com.ruoyi.common.utils.spring.SpringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.system.ApplicationHome;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.SpringServletContainerInitializer;
@@ -23,6 +22,9 @@ import com.ruoyi.common.core.controller.BaseController;
 import com.ruoyi.common.core.domain.AjaxResult;
 import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.common.core.page.TableDataInfo;
+
+import javax.swing.*;
+
 /**
  * Comment_checkController
  * 
@@ -156,15 +158,15 @@ public class CommentController extends BaseController
     @ResponseBody
     public String post_comment(String captcha,String comment,String timestamp) {
         String result = "False";
-        String[] args = new String[] { "python", "D:\\repository\\CS\\ruoyi-system\\src\\main\\java\\com\\ruoyi\\system\\controller\\AddComment.py",captcha,comment,timestamp};
+        String filePath=System.getProperty("evan.webapp");
+      String[] args = new String[] { "python", "D:\\repository\\new\\ruoyi-system\\src\\main\\java\\com\\ruoyi\\system\\controller\\AddComment.py",captcha,comment,timestamp};
+//      String[] args = new String[] { "python", "D:\\repository\\new\\ruoyi-system\\src\\main\\java\\com\\ruoyi\\system\\controller\\test.py",captcha,comment,timestamp};
+//        String[] args = new String[]{"python","//CS//AddComment.py",captcha,comment,timestamp};
         try {
             Process process = Runtime.getRuntime().exec(args);
             BufferedReader in = new BufferedReader(new InputStreamReader(process.getInputStream()));
-//            String line;
-//            while( ( line = in.readLine() ) != null ) {
-//                System.out.println(line);
-//            }
             result = in.readLine();
+            process.waitFor();
             in.close();
             System.out.println("执行结果:" + process.waitFor());
         } catch (IOException | InterruptedException e) {
