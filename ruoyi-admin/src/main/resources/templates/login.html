@@ -44,8 +44,10 @@
                 <form id="signupForm" autocomplete="off">
                     <h4 class="no-margins">登录：</h4>
                     <p class="m-t-md">与兰同馨，心兰相随</p>
-                    <input type="text"     name="username" class="form-control uname"     placeholder="用户名" value="admin"    />
-                    <input type="password" name="password" class="form-control pword"     placeholder="密码"   value="admin123" />
+<!--                    <input type="text"     name="username" class="form-control uname"     placeholder="用户名" value="admin"    />-->
+<!--                    <input type="password" name="password" class="form-control pword"     placeholder="密码"   value="admin123" />-->
+                    <input type="text"     name="username" class="form-control uname"     placeholder="用户名" value="user"/>
+                    <input type="password" name="password" class="form-control pword"     placeholder="密码" value="123456"/>
 					<div class="row m-t" th:if="${captchaEnabled==true}">
 						<div class="col-xs-6">
 						    <input type="text" name="validateCode" class="form-control code" placeholder="验证码" maxlength="5" />
@@ -65,7 +67,7 @@
         </div>
         <div class="signup-footer">
             <div class="pull-left">
-                Copyright © 2018-2021 ruoyi.vip All Rights Reserved. <br>
+                Copyright © 2018-2021 All Rights Reserved. <br>
             </div>
         </div>
     </div>

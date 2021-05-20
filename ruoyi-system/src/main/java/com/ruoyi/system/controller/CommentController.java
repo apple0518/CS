@@ -160,9 +160,9 @@ public class CommentController extends BaseController
     public String post_comment(String captcha,String comment,String timestamp) {
         String result = "False";
         String filePath=System.getProperty("evan.webapp");
-      String[] args = new String[] { "python", "D:\\repository\\new\\ruoyi-system\\src\\main\\java\\com\\ruoyi\\system\\controller\\AddComment.py",captcha,comment,timestamp};
+//      String[] args = new String[] { "python", "D:\\repository\\new\\ruoyi-system\\src\\main\\java\\com\\ruoyi\\system\\controller\\AddComment.py",captcha,comment,timestamp};
 //      String[] args = new String[] { "python", "D:\\repository\\new\\ruoyi-system\\src\\main\\java\\com\\ruoyi\\system\\controller\\test.py",captcha,comment,timestamp};
-//        String[] args = new String[]{"python","//CS//AddComment.py",captcha,comment,timestamp};
+        String[] args = new String[]{"python","//CS//AddComment.py",captcha,comment,timestamp};
         try {
             Process process = Runtime.getRuntime().exec(args);
             BufferedReader in = new BufferedReader(new InputStreamReader(process.getInputStream()));
