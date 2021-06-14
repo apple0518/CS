@@ -27,9 +27,7 @@ def addComment(captchanum, comment, timestamp):
 	comment_headers = {
 		"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36",
 		"X-Requested-With": "XMLHttpRequest",
-		"Cookie": "yibu_rt_language=zh-CN; ASP.NET_SessionId=zehh3mndik3o5oeynn5pe0nm;"
-				  " __RequestVerificationToken=WgJnwrfswdgo-I4j_F7a6LpoU9HeniDdG0Vbg2rOgwSRWaAXASvV67zRcgLb0WLjpVgPzY0fzPp5-GpyQJZlM7ry63iSujDsOIpsryBdl741; "
-				  "acw_tc=781bad0b16169239350794725e513f23f81a57f4a0c5f45e49db4694011377; SERVERID=9cce0917ca076d8ead327ae4668516bf|1616924822|1616924768",
+		"Cookie": "yibu_rt_language=zh-CN; ASP.NET_SessionId=zehh3mndik3o5oeynn5pe0nm; __RequestVerificationToken=WgJnwrfswdgo-I4j_F7a6LpoU9HeniDdG0Vbg2rOgwSRWaAXASvV67zRcgLb0WLjpVgPzY0fzPp5-GpyQJZlM7ry63iSujDsOIpsryBdl741; acw_tc=781bad0b16169239350794725e513f23f81a57f4a0c5f45e49db4694011377; SERVERID=9cce0917ca076d8ead327ae4668516bf|1616924822|1616924768",
 		"Referer": "http://c2020502194rsy.scd.wezhan.cn/lyhd",
 		"Origin": "http://c2020502194rsy.scd.wezhan.cn"
 	}
